@@ -4,41 +4,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="./style.css">
     <title>Rock Paper Scissors</title>
 </head>
 <body>
-    <input type="text" placeholder="ROCK,PAPER OR SCISSORS">
-    <button onclick="test()">Submit</button>
-    <script>
-        function test(){
-        function computerplay(){
-            let rand=Math.floor(Math.random()*3);
-            if (rand===0)
-                rand="rock";
-            else if (rand==1)
-                rand="paper";
-            else
-                rand="scissor";
-            console.log("COMPUTER SELECTION : ",rand);
-            return rand
-        }
-        function playerplay(){
-            const val = document.querySelector('input').value
-            input=val.toLowerCase();
-            console.log("PLAYER SELECTION : ",input);
-            return input
-        }
-        function RPS(player_selection,computer_selection){
-            if ((player_selection == "rock" && computer_selection == "scissor")||(player_selection == "paper" && computer_selection == "rock")||(player_selection == "scissor" && computer_selection == "paper"))
-                console.log("you win!",player_selection,"beats",computer_selection)
-            else if (player_selection==computer_selection)
-                console.log("Its a tie!")
-            else 
-                console.log("You lose!",computer_selection,"beats",player_selection)
-        }
-        let computer_selection=computerplay()
-        let player_selection=playerplay()
-        RPS(player_selection,computer_selection)
-    }
-    </script>
+    <h1 id="Main_Heading" >ROCK PAPERS SCISSORS GAME</h1>
+    <div class="container">
+        <div class="left">
+    <button id="Rock" ><img src="images/rock.JPG"></button>
+    <button id="Paper" ><img src="./images/paper.JPG"></button>
+    <button id="Scissors" ><img src="./images/scissors.JPG"></button>
+</div>
+    <div class="right">
+        <h1 id="computer"></h1>
+    </div>
+    </div>
+    <script src="./script.js"></script>
 </body>

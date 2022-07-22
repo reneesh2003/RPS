@@ -1,0 +1,38 @@
+body{
+    background-image: url(./images/Uchiha\ Madara.jpg) ;
+    background-size: cover;
+}
+img{
+    width: auto;
+    height: 150px;
+}
+#Main_Heading{
+    padding: 10px;
+    margin: 0%;
+    border: 0px;
+    text-align: center;
+    color: white;
+}
+button{
+    padding: 5px;
+    border: 5PX solid;
+    margin: 5px;
+    background-color: black;
+}
+.container{
+    display: flex;
+    align-items: center;
+}
+.left{
+    padding-left: 100px;
+    display: flex;
+    flex: auto;
+    align-items: flex-start;
+    flex-direction: column;
+}
+.right{
+    padding-right: 100px;
+    display: flex;
+    align-self: center;
+    justify-content: center;
+}
