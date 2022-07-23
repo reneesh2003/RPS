@@ -30,6 +30,7 @@ function RPS(player_selection){
         if (document.contains(document.getElementsByTagName('img')[3])){
             document.getElementsByTagName('img')[3].remove();}
         var a = document.createElement('img');
+        a.setAttribute("style","padding: 5px; margin: 5px; border:5px solid white")
         a.src="images/"+rand+".JPG"
         var c = document.getElementById('computer');
         c.after(a);
