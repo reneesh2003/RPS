@@ -1,13 +1,16 @@
-body{
-    background-image: url(./images/Uchiha\ Madara1.png) ;
-    background-size: cover;
-}
+#myVideo {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%; 
+    min-height: 100%;
+  }
 img{
     width: auto;
     height: 150px;
 }
 #Main_Heading{
-    background-color: grey;
+    position: relative;
     padding: 10px;
     margin: 0%;
     border: 0px;
@@ -15,15 +18,21 @@ img{
     color: white;
 }
 .left button{
+    overflow: hidden;
+    position: relative;
     padding: 5px;
-    margin: 5px;
+    padding-bottom: 2px; 
+    margin: 5px; 
+    border:5px  
 }
 .container{
+    position: relative;
     color: white;
     display: flex;
     align-items: center;
 }
 .left{
+    position: relative;
     padding-left: 150px;
     display: flex;
     flex: auto;
@@ -31,6 +40,7 @@ img{
     flex-direction: column;
 }
 .right{
+    position: relative;
     padding-right: 150px;
     display: flex;
     flex-direction: column;
@@ -38,6 +48,7 @@ img{
     justify-content: center;
 }
 .center #how_to_play{
+    position: relative;
     display: flex;
     color: white;
     flex-direction: column;
@@ -47,7 +58,15 @@ img{
     margin: 10%;
     backdrop-filter: blur(10px);
 }
+@keyframes blinkingBackground1{
+    50%		{ background-color: #10c018;}}
+@keyframes blinkingBackground2{
+    50%		{ background-color: #b11212;}}
+@keyframes blinkingBackground3{
+    50%		{ background-color: #000000;}}
+
 .center #score{
+    position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -56,4 +75,10 @@ img{
     color: white;
     font-size: large;
     font-weight: bold;
+}
+#color{
+    padding: 10px;
+}
+audio{
+    position: relative;
 }

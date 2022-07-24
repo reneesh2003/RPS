@@ -3,22 +3,32 @@
  {      
         const R = document.querySelector('#Rock');
         R.addEventListener('click', () => {
-          let player_selection='rock'
-          RPS('rock')
+            const P = document.querySelector('#Paper');
+            P.style.removeProperty("border")
+            const S = document.querySelector('#Scissors');
+            S.style.removeProperty("border")
+            R.setAttribute('style','border : 5px solid black;')
+          RPS('rock',computerplay())
           });
         const P = document.querySelector('#Paper');
         P.addEventListener('click', () => {
-          let player_selection='paper'
-          RPS('paper')
+            const R = document.querySelector('#Rock');
+            R.style.removeProperty("border")
+            const S = document.querySelector('#Scissors');
+            S.style.removeProperty("border")
+          RPS('paper',computerplay())
+          P.setAttribute('style','border : 5px solid black;')
         });
         const S = document.querySelector('#Scissors');
         S.addEventListener('click', () => {
-          let player_selection='scissor'
-          RPS('scissor')
+            const R = document.querySelector('#Rock');
+            R.style.removeProperty("border")
+            const P = document.querySelector('#Paper');
+            P.style.removeProperty("border")
+          RPS('scissor',computerplay())
+          S.setAttribute('style','border : 5px solid black;')
         });
-        
     }
-function RPS(player_selection){
     function computerplay(){
         let rand=Math.floor(Math.random()*3);
         if (rand===0)
@@ -44,28 +54,32 @@ function RPS(player_selection){
             score=0
             document.getElementsByTagName("p")[0].textContent = "SCORE = "+score;
             document.getElementsByTagName("p")[1].textContent = "COUNTER = "+count;
+            document.getElementsByTagName("p")[2].textContent = "WELCOME TO NEW GAME";
             if (document.contains(document.getElementsByTagName('img')[3])){
                 document.getElementsByTagName('img')[3].remove();}
             });
         if ((player_selection == "rock" && computer_selection == "scissor")||(player_selection == "paper" && computer_selection == "rock")||(player_selection == "scissor" && computer_selection == "paper"))
             {
+                const color = document.querySelector('#color');
+                color.setAttribute("style","animation: blinkingBackground1 2s 2;")
             document.getElementsByTagName("p")[0].textContent = "SCORE = "+score;
             document.getElementsByTagName("p")[1].textContent = "COUNTER = "+count;
             document.getElementsByTagName("p")[2].textContent ="YOU WIN!! "+player_selection+" beats "+computer_selection;
             score+=100
         }
         else if (player_selection==computer_selection){
+            const color = document.querySelector('#color');
+                color.setAttribute("style","animation: blinkingBackground3 2s 2;")
             document.getElementsByTagName("p")[0].textContent = "SCORE = "+score;
             document.getElementsByTagName("p")[1].textContent = "COUNTER = "+count;
             document.getElementsByTagName("p")[2].textContent ="IT'S A TIE!!";
             score+=50}
         else {
+            const color = document.querySelector('#color');
+                color.setAttribute("style","animation: blinkingBackground2 2s 2;")
             document.getElementsByTagName("p")[1].textContent = "COUNTER = "+count;
             document.getElementsByTagName("p")[2].textContent ="YOU LOSE!! "+computer_selection+" beats "+player_selection;
         }
     }
-    let computer_selection=computerplay()
-    RPS(player_selection,computer_selection)
-}
-let score=100,count=0
+let score=0,count=0
 Player()
